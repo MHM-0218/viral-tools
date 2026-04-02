@@ -1,0 +1,12 @@
+{
+  "name": "viral-tools",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "ai-roast",
+    "idea-score",
+    "pricing-critic",
+    "niche-finder",
+    "headline-fixer"
+  ]
+}

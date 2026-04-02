@@ -1,0 +1,11 @@
+node_modules
+.next
+.vercel
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.p8
+*.mobileprovision
+.DS_Store

@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #07070f;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(139, 92, 246, 0.3);
+    color: #f8fafc;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+  }
+
+  .glass-card-hover {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.2s ease;
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .input-field {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: #f8fafc;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .input-field:focus {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .label-text {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .dot-grid-bg {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .section-glow-red {
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(239, 68, 68, 0.12) 0%, transparent 70%);
+  }
+
+  .section-glow-purple {
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  }
+
+  .section-glow-green {
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+  }
+
+  .section-glow-cyan {
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+  }
+
+  .section-glow-amber {
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+  }
+
+  /* Responsive bento grid for home page */
+  .bento-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .bento-grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        'roast roast idea'
+        'pricing niche headline';
+    }
+    .grid-roast    { grid-area: roast; }
+    .grid-idea     { grid-area: idea; }
+    .grid-pricing  { grid-area: pricing; }
+    .grid-niche    { grid-area: niche; }
+    .grid-headline { grid-area: headline; }
+  }
+}
